@@ -24,7 +24,7 @@ data:
 apiVersion: servicecatalog.k8s.io/v1beta1
 kind: ClusterServiceBroker
 metadata:
-  name: osba
+  name: {{ .Release.Name }}
 spec:
   {{- if .Values.tls.enabled }}
   url: https://{{ template "fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local
